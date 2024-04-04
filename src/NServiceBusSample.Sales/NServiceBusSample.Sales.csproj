@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
+        <RootNamespace>NServiceBusSample.Producer</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

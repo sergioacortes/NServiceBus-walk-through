@@ -6,4 +6,4 @@ var builder = Host.CreateDefaultBuilder()
 
 var host = builder.Build();
 
-await host.StartAsync();
+await host.RunAsync();
