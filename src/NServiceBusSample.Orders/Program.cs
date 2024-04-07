@@ -1,5 +1,6 @@
 ﻿using NServiceBusSample.Extensions;
 using NServiceBusSample.Orders.BackgroundServices;
+using NServiceBusSample.Orders.Extensions;
 
 var builder = WebApplication.CreateBuilder();
 

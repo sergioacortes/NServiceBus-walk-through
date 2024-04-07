@@ -1,5 +1,5 @@
 ﻿using NServiceBus;
-using NServiceBusSample.Contracts;
+using NServiceBusSample.Contracts.Commands;
 
 namespace NServiceBusSample.Orders.BackgroundServices;
 
@@ -18,7 +18,7 @@ public class OrdersBackgroundService(IMessageSession messageSession, ILogger<Ord
                 ProductId = Guid.NewGuid()
             };
             
-            logger.LogInformation("Sending a new order with id {OrderOrderId}", placerOrderCommand.OrderId);
+            logger.LogInformation("Sending a new order with id {OrderId}", placerOrderCommand.OrderId);
 
             await messageSession.Send(placerOrderCommand, cancellationToken);
             await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
