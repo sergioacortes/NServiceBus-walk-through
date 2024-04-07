@@ -1,7 +1,11 @@
-﻿namespace NServiceBusSample.Contracts;
+﻿using NServiceBusSample.Contracts.Base;
 
-public class PlacerOrderCommand
+namespace NServiceBusSample.Contracts.Commands;
+
+public class PlacerOrderCommand : IDomainCommand
 {
+    
+    public Guid Id { get; set; }
     
     public Guid OrderId { get; set; }
 
