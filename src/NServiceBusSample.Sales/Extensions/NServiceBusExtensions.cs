@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using NServiceBus;
+using NServiceBusSample.Contracts.Base;
+using NServiceBusSample.Extensions.Endpoint;
 using NServiceBusSample.Extensions.Options;
 using NServiceBusSample.Extensions.Validators;
 
-namespace NServiceBusSample.Extensions;
+namespace NServiceBusSample.Sales.Extensions;
 
 public static class NServiceBusExtensions
 {
@@ -25,6 +25,10 @@ public static class NServiceBusExtensions
 
             endpointConfiguration.UseSerialization<SystemJsonSerializer>();
             endpointConfiguration.UseTransport<LearningTransport>();
+            
+            endpointConfiguration
+                .DefineAsCommand(typeof(IDomainCommand))
+                .DefineAsEvent(typeof(IDomainEvent));
             
             return endpointConfiguration;
             

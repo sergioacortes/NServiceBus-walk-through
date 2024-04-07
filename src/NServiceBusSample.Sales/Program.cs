@@ -1,4 +1,5 @@
 ﻿using NServiceBusSample.Extensions;
+using NServiceBusSample.Sales.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
