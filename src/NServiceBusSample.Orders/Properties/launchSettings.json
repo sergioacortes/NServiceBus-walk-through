@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "TASuite.ACC.API.Command": {
+    "NServiceBusSample.Orders": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
