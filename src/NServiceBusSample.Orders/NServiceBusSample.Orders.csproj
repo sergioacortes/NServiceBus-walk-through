@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
     
     <ItemGroup>
+      <ProjectReference Include="..\NServiceBusSample.Contracts\NServiceBusSample.Contracts.csproj" />
       <ProjectReference Include="..\NServiceBusSample.Extensions\NServiceBusSample.Extensions.csproj" />
     </ItemGroup>
     
