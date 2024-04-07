@@ -4,4 +4,8 @@
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     </ItemGroup>
     
+    <ItemGroup>
+      <ProjectReference Include="..\NServiceBusSample.Extensions\NServiceBusSample.Extensions.csproj" />
+    </ItemGroup>
+    
 </Project>
