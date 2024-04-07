@@ -7,7 +7,6 @@ public class OrdersHandler(ILogger<OrdersHandler> logger)
     : IHandleMessages<PlacerOrderCommand>
 {
 
-
     public Task Handle(PlacerOrderCommand message, IMessageHandlerContext context)
     {
         
