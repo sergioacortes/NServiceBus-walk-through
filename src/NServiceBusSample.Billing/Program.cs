@@ -1,5 +1,9 @@
-﻿var builder = WebApplication.CreateBuilder(args);
-    
+﻿using NServiceBusSample.Billing.Extensions;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.AddNServicesBus(builder.Services);
+
 var host = builder.Build();
 
 await host.RunAsync();
