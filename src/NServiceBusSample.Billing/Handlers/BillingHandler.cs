@@ -3,7 +3,7 @@ using NServiceBusSample.Contracts.Events;
 
 namespace NServiceBusSample.Billing.Handlers;
 
-public class OrdersHandler(ILogger<OrdersHandler> logger) : IHandleMessages<OrderPlacedEvent>
+public class BillingHandler(ILogger<BillingHandler> logger) : IHandleMessages<OrderPlacedEvent>
 {
 
     public Task Handle(OrderPlacedEvent message, IMessageHandlerContext context)
