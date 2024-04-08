@@ -17,6 +17,11 @@ public static class RoutingExtensions
             .GetSection(NServiceBusSampleConstants.NServiceBusRoutingSectionName)
             .Get<NServiceBusTransportRouting>();
 
+        if (routeEndpoints.Routing is null)
+        {
+            return transportExtensions;
+        }
+        
         foreach (var routeEndpoint in routeEndpoints.Routing)
         {
             routing.RouteToEndpoint(Type.GetType(routeEndpoint.Type), routeEndpoint.Endpoint);

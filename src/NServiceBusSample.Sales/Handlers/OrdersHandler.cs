@@ -4,7 +4,7 @@ using NServiceBusSample.Contracts.Events;
 
 namespace NServiceBusSample.Sales.Handlers;
 
-public class OrdersHandler(ILogger<OrdersHandler> logger, IMessageSession messageSession) 
+public class OrdersHandler(ILogger<OrdersHandler> logger) 
     : IHandleMessages<PlacerOrderCommand>
 {
 
@@ -21,8 +21,8 @@ public class OrdersHandler(ILogger<OrdersHandler> logger, IMessageSession messag
         };
         
         logger.LogInformation("The order with id {OrderId} has been processed", message.OrderId);
-
-        await messageSession.Publish(orderPlacedEvent, context.CancellationToken);
+        
+        await context.Publish(orderPlacedEvent);
 
     }
     
