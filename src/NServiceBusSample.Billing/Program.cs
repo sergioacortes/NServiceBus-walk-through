@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
-
-var builder = Host.CreateDefaultBuilder()
-    .ConfigureAppConfiguration((context, configurationBuilder) => { })
-    .ConfigureServices((builderContext, services) => { });
+﻿var builder = WebApplication.CreateBuilder(args);
     
 var host = builder.Build();
 
