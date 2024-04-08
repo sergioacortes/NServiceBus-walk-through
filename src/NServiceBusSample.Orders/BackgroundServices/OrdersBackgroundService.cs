@@ -15,7 +15,8 @@ public class OrdersBackgroundService(IMessageSession messageSession, ILogger<Ord
             {
                 OrderId = Guid.NewGuid(),
                 Description = $"New order",
-                ProductId = Guid.NewGuid()
+                ProductId = Guid.NewGuid(),
+                Version = DateTime.Now
             };
             
             logger.LogInformation("Sending a new order with id {OrderId}", placerOrderCommand.OrderId);

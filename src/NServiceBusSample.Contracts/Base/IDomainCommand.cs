@@ -1,6 +1,5 @@
 ﻿namespace NServiceBusSample.Contracts.Base;
 
-public interface IDomainCommand
+public interface IDomainCommand : IDomainTransformationObject
 {
-    Guid Id { get; set; }
 }

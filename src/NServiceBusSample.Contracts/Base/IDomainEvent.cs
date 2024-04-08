@@ -1,8 +1,5 @@
 ﻿namespace NServiceBusSample.Contracts.Base;
 
-public interface IDomainEvent
+public interface IDomainEvent : IDomainTransformationObject
 {
-    
-    public Guid Id { get; set; }
-    
 }

@@ -13,4 +13,6 @@ public class PlacerOrderCommand : IDomainCommand
 
     public string Description { get; set; }
     
+    public DateTime Version { get; set; }
+    
 }

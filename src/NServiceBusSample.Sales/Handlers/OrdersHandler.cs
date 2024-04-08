@@ -1,17 +1,28 @@
 ﻿using NServiceBus;
 using NServiceBusSample.Contracts.Commands;
+using NServiceBusSample.Contracts.Events;
 
 namespace NServiceBusSample.Sales.Handlers;
 
-public class OrdersHandler(ILogger<OrdersHandler> logger) 
+public class OrdersHandler(ILogger<OrdersHandler> logger, IMessageSession messageSession) 
     : IHandleMessages<PlacerOrderCommand>
 {
 
-    public Task Handle(PlacerOrderCommand message, IMessageHandlerContext context)
+    public async Task Handle(PlacerOrderCommand message, IMessageHandlerContext context)
     {
+
+        var orderPlacedEvent = new OrderPlacedEvent()
+        {
+            Id = Guid.NewGuid(),
+            OrderId = message.OrderId,
+            Description = message.Description,
+            ProductId = message.ProductId,
+            Version = DateTime.UtcNow
+        };
         
         logger.LogInformation("The order with id {OrderId} has been processed", message.OrderId);
-        return Task.CompletedTask;
+
+        await messageSession.Publish(orderPlacedEvent, context.CancellationToken);
 
     }
     
