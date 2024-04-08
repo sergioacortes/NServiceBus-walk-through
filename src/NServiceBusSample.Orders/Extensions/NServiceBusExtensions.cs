@@ -31,13 +31,8 @@ public static class NServiceBusExtensions
                 .DefineAsEvent(typeof(IDomainEvent));
             
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
-            var routing = transport.Routing();
-            var routeEndpoints = context.Configuration.GetSection(NServiceBusSampleConstants.NServiceBusRoutingSectionName).Get<NServiceBusTransportRouting>();
 
-            foreach (var routeEndpoint in routeEndpoints.Routing)
-            {
-                routing.RouteToEndpoint(Type.GetType(routeEndpoint.Type), routeEndpoint.Endpoint);
-            }
+            transport.ConfigureRouting(context);
             
             return endpointConfiguration;
             

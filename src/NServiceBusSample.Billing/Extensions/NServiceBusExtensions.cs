@@ -3,6 +3,7 @@ using NServiceBus;
 using NServiceBusSample.Contracts.Base;
 using NServiceBusSample.Extensions.Endpoint;
 using NServiceBusSample.Extensions.Options;
+using NServiceBusSample.Extensions.Routing;
 using NServiceBusSample.Extensions.Validators;
 
 namespace NServiceBusSample.Billing.Extensions;
@@ -29,6 +30,10 @@ public static class NServiceBusExtensions
             endpointConfiguration
                 .DefineAsCommand(typeof(IDomainCommand))
                 .DefineAsEvent(typeof(IDomainEvent));
+            
+            var transport = endpointConfiguration.UseTransport<LearningTransport>();
+
+            transport.ConfigureRouting(context);
             
             return endpointConfiguration;
             
