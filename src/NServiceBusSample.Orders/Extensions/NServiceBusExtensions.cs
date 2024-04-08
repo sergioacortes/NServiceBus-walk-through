@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using NServiceBus;
 using NServiceBusSample.Contracts.Base;
+using NServiceBusSample.Extensions;
 using NServiceBusSample.Extensions.Endpoint;
 using NServiceBusSample.Extensions.Options;
 using NServiceBusSample.Extensions.Routing;
@@ -31,7 +32,7 @@ public static class NServiceBusExtensions
             
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
             var routing = transport.Routing();
-            var routeEndpoints = context.Configuration.GetSection("NServiceBus:Transport").Get<NServiceBusTransportRouting>();
+            var routeEndpoints = context.Configuration.GetSection(NServiceBusSampleConstants.NServiceBusRoutingSectionName).Get<NServiceBusTransportRouting>();
 
             foreach (var routeEndpoint in routeEndpoints.Routing)
             {
