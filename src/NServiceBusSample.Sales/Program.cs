@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using NServiceBusSample.Extensions;
+using NServiceBusSample.Sales.Extensions;
 
-var builder = Host.CreateDefaultBuilder()
-    .ConfigureAppConfiguration((context, configurationBuilder) => { })
-    .ConfigureServices((builderContext, services) => { });
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.AddNServicesBus(builder.Services);
 
 var host = builder.Build();
 

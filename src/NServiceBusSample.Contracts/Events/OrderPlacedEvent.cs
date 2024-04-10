@@ -1,7 +1,11 @@
+using NServiceBusSample.Contracts.Base;
+
 namespace NServiceBusSample.Contracts.Events;
 
-public class OrderPlacedEvent
+public class OrderPlacedEvent : IDomainEvent
 {
+    
+    public Guid Id { get; set; }
     
     public Guid OrderId { get; set; }
 
