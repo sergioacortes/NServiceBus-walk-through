@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using NServiceBus;
 using NServiceBusSample.Contracts.Base;
-using NServiceBusSample.Extensions;
 using NServiceBusSample.Extensions.Endpoint;
 using NServiceBusSample.Extensions.Options;
 using NServiceBusSample.Extensions.Routing;

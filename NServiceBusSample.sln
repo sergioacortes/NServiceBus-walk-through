@@ -19,6 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusSample.Billing",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusSample.Extensions", "src\NServiceBusSample.Extensions\NServiceBusSample.Extensions.csproj", "{37539326-0185-4212-9F31-A295C43D7B8F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".documentation", ".documentation", "{32A235E4-4BE0-44B5-A40B-A4760315B50E}"
+	ProjectSection(SolutionItems) = preProject
+		.documentation\02-create-and-post-and-order.md = .documentation\02-create-and-post-and-order.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
