@@ -75,10 +75,12 @@ public static class NServiceBusExtensions
 }
 ```
 
-Two this are the most important part 
+This extension method does the following 
 
-- Define the commands and define the events. We use an extension method implemented in the project NServiceBusSample.Extensions
-- Configure the routing
+- Read the NServiceBus configuration defined in the appsettings.json file
+- Create the NServiceBus endpoint configuration
+- Define the commands and define the events using an extension method implemented in the project NServiceBusSample.Extensions
+- Configure the routing using an extension method implemented in the project NServiceBusSample.Extensions
 
 ## Command routing
 
